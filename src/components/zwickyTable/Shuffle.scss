@@ -1,0 +1,17 @@
+.shuffle {
+    display:flex;
+    align-items: flex-end;
+    
+    button {
+        font-size: 1.5rem;
+        padding: 1rem 3rem;
+        background: #DC5961;
+        border-radius: 15px;
+    }
+
+    p {
+        padding-left: 1rem;
+        padding-bottom: 0;
+        margin-bottom:0;
+    }
+}
