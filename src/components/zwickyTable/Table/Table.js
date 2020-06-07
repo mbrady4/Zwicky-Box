@@ -109,12 +109,19 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, upd
             <Shuffle handleShuffle={handleShuffle}
                     exploredPossibilities={exploredPossibilities}
                     numPossibilities={numPossibilities}/>
-            { hasShuffled ? <CurrentCombo
-                                keys={keys}
-                                table={table}
-                                saveCombo={saveCombo}
-                            /> : null }
-            { (Object.keys(savedCombos).length > 0) ? <SavedCombos savedCombos={savedCombos} deleteCombo={deleteCombo}/> : null }
+            { hasShuffled ? <div>
+                                <h3>Current Combination</h3>
+                                <CurrentCombo
+                                    keys={keys}
+                                    table={table}
+                                    saveCombo={saveCombo}
+                                />
+                            </div> : null }
+            { (Object.keys(savedCombos).length > 0) ? <div>
+                                                        <h3>Saved Combinations</h3>
+                                                        <SavedCombos savedCombos={savedCombos} deleteCombo={deleteCombo}/>
+                                                      </div> : null }
+            <h3>Zwicky Table</h3>
             <div className='table'>
                 { keys.map( (category, key) => {
                     return <Category category={table[category]} 
@@ -128,7 +135,7 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, upd
                             />
                     }) 
                 }
-                <button onClick={addCategory}>+</button>
+                <button className='add-category' onClick={addCategory}>+</button>
             </div>
             <Reset resetItems={resetItems}/>
         </div>

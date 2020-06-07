@@ -1,8 +1,9 @@
 import React from 'react';
+import './Reset.scss';
 
 const reset = ({ resetItems }) => {
     return (
-        <button onClick={ () => resetItems() }>Clear and reset</button>
+        <button className='reset' onClick={ () => resetItems() }>Clear and reset</button>
     )
 }
 

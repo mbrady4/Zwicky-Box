@@ -1,17 +1,40 @@
 .shuffle {
     display:flex;
     align-items: flex-end;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px white solid;
     
     button {
-        font-size: 1.5rem;
-        padding: 1rem 3rem;
+        font-size: 3rem;
+        padding: 1rem 6rem;
         background: #DC5961;
+        color: white;
         border-radius: 15px;
+        border: none;
+        box-shadow: 0 15px 20px -5px rgba(13,113,130,0.15);
+
+
+        &:hover {
+            background: #CC5961;
+            color: #CCCCCC;
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
+        }
     }
 
     p {
-        padding-left: 1rem;
+        font-size: 2rem;
+        font-weight: 300;
+        padding-left: 2rem;
         padding-bottom: 0;
         margin-bottom:0;
+
+        span {
+            font-weight: 500;
+        }
     }
 }

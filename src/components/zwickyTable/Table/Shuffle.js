@@ -6,7 +6,7 @@ const Shuffle = ({handleShuffle, exploredPossibilities, numPossibilities}) => {
     return (
         <div className='shuffle'>
             <button onClick={handleShuffle}>Shuffle</button>
-            <p>{exploredPossibilities} combinations explored of a possible {numPossibilities} combinations</p>
+            <p><span>{exploredPossibilities}</span> combinations explored of a possible <span>{numPossibilities}</span> combinations</p>
         </div>
     )
 }

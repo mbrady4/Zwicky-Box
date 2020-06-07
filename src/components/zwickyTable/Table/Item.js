@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './Item.scss';
 
@@ -31,7 +33,7 @@ const Item = ({item, categoryIndex, itemIndex, selected, deleteItem, editItem}) 
     return (
         <div onMouseEnter={() => setIsMouseHere(true)}
              onMouseLeave={() => setIsMouseHere(false)}
-             className={ (selected) ? "selected" : null}>
+             className={ (selected) ? "selected item" : 'item'}>
             <input
                 type='text'
                 value={value}
@@ -39,7 +41,7 @@ const Item = ({item, categoryIndex, itemIndex, selected, deleteItem, editItem}) 
                 onKeyDown={keyPressHandler}
                 onBlur={loseFocus}
             />
-            { isMouseHere ? <button onClick={() => onDeleteClick()}>Delete</button> : null}
+            { isMouseHere ? <FontAwesomeIcon className='trash' icon={ faTrash } onClick={() => onDeleteClick()} /> : null}
         </div>
     )
 }

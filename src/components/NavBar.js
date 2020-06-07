@@ -6,8 +6,8 @@ const NavBar = () => {
         <div className='navbar'>
             <h1>Zwicky Box</h1>
             <div>
-                <span>How to Use</span>
-                <span>Examples</span>
+                <a href="#">How to Use</a>
+                <a href="#">Examples</a>
             </div>
         </div>
     )

@@ -1,6 +1,8 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import './CurrentCombo.scss';
+
 const CurrentCombo = ({keys, table, saveCombo}) => {
     const items = [];
     const categories = [];
@@ -12,7 +14,7 @@ const CurrentCombo = ({keys, table, saveCombo}) => {
     })
 
     return (
-        <div className="table">
+        <div className="current-combo-table">
              { keys.map( (category, key) => {
                  const index = table[category].selected;
                  let item = table[category].items[index];
@@ -24,7 +26,7 @@ const CurrentCombo = ({keys, table, saveCombo}) => {
                         );
              })
              }
-             <button onClick={() => saveCombo(categories, items)}>Save Combo</button>
+             <button className='save-combo' onClick={() => saveCombo(categories, items)}>Save</button>
         </div>
     )
 };

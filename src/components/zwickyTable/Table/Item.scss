@@ -1,10 +1,30 @@
-input {
-    padding: 1rem 0;
-    border-left: none;
-    border-right: none;
-    border-top: none;
+.item {
+    input {
+        padding: 1rem 0;
+        padding-left: 0.5rem;
+        font-size: 1.75rem;
+        font-weight: 300;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px #F0E1E1 solid;
+        width: 150px;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px red solid;
+        }
+    }
+
+    .trash {
+        font-size: 1.5rem;
+    }
 }
 
-.selected input {
-    background-color: red;
+.selected {
+
+    input {
+        background: #DC5961;
+        color: #fff;
+    }
 }

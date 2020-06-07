@@ -1,13 +1,15 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import './SavedCombos.scss';
+
 const SaveCombos = ({savedCombos, deleteCombo}) => {
     console.log(savedCombos);
     return (
-        <div className="table">
+        <div className="saved-combos-table">
             { Object.keys(savedCombos).map( (combo, key) => {
                 return (
-                    <div key={uuidv4()}>
+                    <div key={uuidv4()} className='saved-combo'>
                         { savedCombos[combo].categories.map( (category, key) => {
                         return (
                             <div key={uuidv4()}>
@@ -17,7 +19,7 @@ const SaveCombos = ({savedCombos, deleteCombo}) => {
                             )
                         })
                         }
-                        <button onClick={() => deleteCombo(combo)}>Delete</button> 
+                        <button className='delete-combo' onClick={() => deleteCombo(combo)}>Delete</button> 
                     </div>
                     )
                 })

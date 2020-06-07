@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Item from './Item';
 
 import './Category.scss';
@@ -32,19 +34,20 @@ const Category = ({category, categoryIndex, addItem, deleteItem, deleteCategory,
 
     const onDeleteClick = () => {
         deleteCategory(categoryIndex);
-    }
+    } 
 
     return (
         <div className='category'>
             <div onMouseEnter={() => setIsMouseHere(true)}
                  onMouseLeave={() => setIsMouseHere(false)}>
-                <input 
+                <input
+                    className="category-title" 
                     type='text'
                     value={categoryTitle}
                     onChange={handleCategoryChange}
                     onKeyDown={keyPressHandler}
                 />
-                { isMouseHere ? <button onClick={() => onDeleteClick()}>Delete</button> : null}
+                { isMouseHere ? <FontAwesomeIcon className='trash' icon={faTrash} onClick={() => onDeleteClick()} /> : null}
             </div>
             { category.items.map( (item, key) => {
                 return <Item key={key} 
@@ -57,8 +60,9 @@ const Category = ({category, categoryIndex, addItem, deleteItem, deleteCategory,
             })}
             <form onSubmit={handleSubmit}>
                 <input
+                    className='add-item'
                     type='text'
-                    placeholder='new item'
+                    placeholder='add item'
                     value={value}
                     onChange={handleChanges}
                 />
