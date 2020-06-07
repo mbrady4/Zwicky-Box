@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import './Item.scss';
 
-const Item = ({item, categoryIndex, itemIndex, deleteItem, editItem}) => {
+const Item = ({item, categoryIndex, itemIndex, selected, deleteItem, editItem}) => {
     const [value, setValue] = useState(item)
     const [isMouseHere, setIsMouseHere] = useState(false);
 
@@ -30,7 +30,8 @@ const Item = ({item, categoryIndex, itemIndex, deleteItem, editItem}) => {
 
     return (
         <div onMouseEnter={() => setIsMouseHere(true)}
-             onMouseLeave={() => setIsMouseHere(false)}>
+             onMouseLeave={() => setIsMouseHere(false)}
+             className={ (selected) ? "selected" : null}>
             <input
                 type='text'
                 value={value}

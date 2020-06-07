@@ -49,13 +49,14 @@ const Category = ({category, categoryIndex, addItem, deleteItem, deleteCategory,
             { category.items.map( (item, key) => {
                 return <Item key={key} 
                              categoryIndex={categoryIndex}
-                             itemIndex={key} 
+                             itemIndex={key}
                              item={item}
+                             selected={(category.selected === key) ? true : false}
                              deleteItem={deleteItem}
                              editItem={editItem}/>;
             })}
             <form onSubmit={handleSubmit}>
-                <input 
+                <input
                     type='text'
                     placeholder='new item'
                     value={value}

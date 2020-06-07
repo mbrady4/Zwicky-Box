@@ -4,3 +4,7 @@ input {
     border-right: none;
     border-top: none;
 }
+
+.selected input {
+    background-color: red;
+}
