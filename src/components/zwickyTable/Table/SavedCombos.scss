@@ -8,6 +8,7 @@
 
     .saved-combo {
         display:flex;
+        flex-wrap: wrap;
 
         div {
             width:150px;
