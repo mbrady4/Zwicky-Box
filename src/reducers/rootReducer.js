@@ -1,4 +1,10 @@
-import { UPDATE_ITEM, SHUFFLE, RESET_ITEMS, SAVE_COMBO, UPDATE_SAVED_COMBOS } from '../actions/action';
+import { UPDATE_ITEM, 
+         SHUFFLE, 
+         RESET_ITEMS, 
+         SAVE_COMBO, 
+         UPDATE_SAVED_COMBOS,
+         SET_MARKETING_STATE,
+         SET_LIVING_STATE } from '../actions/action';
 
 const initialState = {
     table: {
@@ -20,7 +26,8 @@ const initialState = {
     },
     numPossibilities: 27,
     exploredPossibilities: 0,
-    savedCombos: {}
+    savedCombos: {},
+    hasShuffled: false
 };
 
 export default (state = initialState, action) => {
@@ -35,7 +42,8 @@ export default (state = initialState, action) => {
         case SHUFFLE:
             return Object.assign({}, state, {
                 table: action.payload.table,
-                exploredPossibilities: action.payload.exploredPossibilities
+                exploredPossibilities: action.payload.exploredPossibilities,
+                hasShuffled: action.payload.hasShuffled
             })
         case SAVE_COMBO:
             const key = Object.keys(state.savedCombos).length;
@@ -46,6 +54,10 @@ export default (state = initialState, action) => {
                 }
             });
         case RESET_ITEMS:
+            return action.payload;
+        case SET_MARKETING_STATE:
+            return action.payload;
+        case SET_LIVING_STATE:
             return action.payload;
         case UPDATE_SAVED_COMBOS:
             return Object.assign({}, state, {

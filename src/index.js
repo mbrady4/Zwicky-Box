@@ -8,6 +8,7 @@ import { loadState, saveState } from './utils/localStorage.js';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers/rootReducer';
+import { BrowserRouter as Router } from "react-router-dom";
 
 const persistedState = loadState();
 const store = createStore(rootReducer, persistedState);
@@ -18,9 +19,11 @@ store.subscribe( () => {
 
 ReactDOM.render(
   <React.StrictMode>
+    <Router>
     <Provider store={store}>
       <App />
     </Provider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

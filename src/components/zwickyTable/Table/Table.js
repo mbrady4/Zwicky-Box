@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Category from './Category';
-
+import { withRouter } from 'react-router-dom';
 import Shuffle from './Shuffle';
 import Reset from './Reset';
 import CurrentCombo from './CurrentCombo';
@@ -10,8 +10,8 @@ import SavedCombos from './SaveCombos';
 import { updateItem, shuffleItems, resetItems, saveCombo, updatedSavedCombos } from '../../../actions/action';
 import './Table.scss';
 
-const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, updateItem, shuffleItems, resetItems, saveCombo, updatedSavedCombos}) => {
-    const [hasShuffled, setHasShuffled] = useState(false);
+const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, hasShuffled, updateItem, shuffleItems, resetItems, saveCombo, updatedSavedCombos}) => {
+    // const [hasShuffled, setHasShuffled] = useState(false);
     const keys = Object.keys(table);
 
     const editItem = (categoryIndex, itemIndex, newValue) => {
@@ -93,7 +93,7 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, upd
 
     const handleShuffle = () => {
         console.log("Handle Shuffle Triggered");
-        setHasShuffled(true);
+        // setHasShuffled(true);
         shuffleItems(table, exploredPossibilities);
     }
 
@@ -147,7 +147,8 @@ const mapStateToProps = state => {
         table: state.table,
         numPossibilities: state.numPossibilities,
         exploredPossibilities: state.exploredPossibilities,
-        savedCombos: state.savedCombos
+        savedCombos: state.savedCombos,
+        hasShuffled: state.hasShuffled
     }
 };
 

@@ -3,6 +3,8 @@ export const SHUFFLE = "SHUFFLE";
 export const RESET_ITEMS = "RESET_ITEMS";
 export const SAVE_COMBO = "SAVE_COMBO";
 export const UPDATE_SAVED_COMBOS = "UPDATE_SAVED_COMBOS";
+export const SET_MARKETING_STATE = "SET_MARKETING_STATE";
+export const SET_LIVING_STATE = "SET_LIVING_STATE";
 
 export const updateItem = (updatedTable) => {
     const possibilities = possibilityCount(updatedTable);
@@ -29,7 +31,8 @@ export const shuffleItems = (table, exploredPossibilities) => {
     return {
         type: SHUFFLE,
         payload: { table: updatedTable, 
-                   exploredPossibilities: (exploredPossibilities + 1)
+                   hasShuffled: true,
+                   exploredPossibilities: (exploredPossibilities + 1),
                  }
     }
 };
@@ -59,6 +62,20 @@ export const saveCombo = (categories, items) => {
             categories: categories,
             items: items
         }
+    }
+}
+
+export const setMarketingExample = () => {
+    return {
+        type: SET_MARKETING_STATE,
+        payload: marketingState
+    }
+}
+
+export const setLivingExample = () => {
+    return {
+        type: SET_LIVING_STATE,
+        payload: livingState
     }
 }
 
@@ -101,5 +118,122 @@ const resetState = {
         },
     },
     numPossibilities: 27,
-    exploredPossibilities: 0
+    exploredPossibilities: 0,
+    savedCombos: {},
+    hasShuffled: false
 };
+
+const marketingState = {
+    table: {
+      '1': {
+        category: 'Cost',
+        items: [
+          'Free',
+          'Paid'
+        ],
+        selected: null
+      },
+      '2': {
+        category: 'Reach',
+        items: [
+          'Individual',
+          'Group',
+          'Mass'
+        ],
+        selected: null
+      },
+      '3': {
+        category: 'Density',
+        items: [
+          'Physical',
+          'Digital'
+        ],
+        selected: null
+      },
+      '4': {
+        category: 'Entertainment',
+        items: [
+          'Written',
+          'Presentation',
+          'Recording',
+          'Discussion'
+        ],
+        selected: null
+      }
+    },
+    numPossibilities: 48,
+    exploredPossibilities: 0,
+    savedCombos: {},
+    hasShuffled: false
+}
+
+const livingState = {
+    table: {
+      '1': {
+        category: 'Location',
+        items: [
+          'Mega-City',
+          'City',
+          'Suburb',
+          'Country'
+        ],
+        selected: null
+      },
+      '2': {
+        category: 'Consumption Barrier',
+        items: [
+          'Ocean',
+          'Lake',
+          'Pools',
+          'None'
+        ],
+        selected: null
+      },
+      '3': {
+        category: 'Density',
+        items: [
+          'High ',
+          'Moderate',
+          'Low'
+        ],
+        selected: null
+      },
+      '4': {
+        category: 'Entertainment',
+        items: [
+          'Sports teams',
+          'Theatre',
+          'Shopping',
+          'Night life',
+          'Museums'
+        ],
+        selected: null
+      },
+      '5': {
+        category: 'Housing Type',
+        items: [
+          'Apartment',
+          'Condo',
+          'Multi-family unit',
+          'Small home'
+        ],
+        selected: null
+      },
+      '6': {
+        category: 'Transportation',
+        items: [
+          'Rideshare',
+          'Personal vehicle',
+          'Bus',
+          'Train',
+          'Walk',
+          'Bike'
+        ],
+        selected: null
+      }
+    },
+    numPossibilities: 5760,
+    exploredPossibilities: 0,
+    savedCombos: {},
+    hasShuffled: false
+  }
