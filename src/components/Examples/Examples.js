@@ -4,6 +4,8 @@ import { setMarketingExample, setLivingExample} from '../..//actions/action';
 import { v4 as uuidv4 } from 'uuid';
 import { Redirect } from 'react-router-dom';
 
+import './Examples.scss';
+
 const Examples = (props) => {
     const examples = ['Marketing Strategies', 'Places to live']
     const images = ['marketingExample.png', 'livingExample.png']
@@ -18,15 +20,17 @@ const Examples = (props) => {
     }
 
     return (
-        <div>
+        <div className='examples'>
             { toTable ? <Redirect to='/' /> : null}
-            <h1>Examples</h1>
+            <h1>Example Zwicky Boxes</h1>
             <p>Click an example to explore it.</p>
             { examples.map( (example, i) => {
                 return (
-                    <div onClick={() => clickHandler(i)} key={uuidv4()}>
-                        <h2>{example}</h2>
-                        <img src={images[i]} alt={example}/>
+                    <div className='example' onClick={() => clickHandler(i)} key={uuidv4()}>
+                        <div className='overlay'>
+                            <h2>{example}</h2>
+                            <img src={images[i]} alt={example}/>
+                        </div>
                     </div>
                     )
                 })

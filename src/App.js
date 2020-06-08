@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar.js';
 import ZwickyTable from './components/zwickyTable/ZwickyTable';
 import Examples from './components/Examples/Examples';
+import HowToUse from './components/HowToUse/HowToUse';
 
 import './App.scss';
 
@@ -12,6 +13,9 @@ function App() {
     <div className="App">
       <NavBar />
         <Switch>
+          <Route path='/howtouse'>
+            <HowToUse />
+          </Route>
           <Route path='/examples'>
             <Examples />
           </Route>
