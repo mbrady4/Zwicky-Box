@@ -9,7 +9,6 @@ import './Examples.scss';
 const Examples = (props) => {
     const examples = ['Marketing Strategies', 'Places to live']
     const images = ['marketingExample.png', 'livingExample.png']
-    // const actions = [ setMarketingExample, setLivingExample]
     const [toTable, setToTable] = useState(false)
 
     const clickHandler = (i) => {

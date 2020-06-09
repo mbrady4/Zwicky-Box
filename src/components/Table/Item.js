@@ -13,8 +13,6 @@ const Item = ({item, categoryIndex, itemIndex, selected, deleteItem, editItem}) 
     }
     
     const loseFocus = e => {
-        console.log('Focus Lost');
-        console.log(e.target.value);
         editItem(categoryIndex, itemIndex, e.target.value);
     }
 
@@ -26,7 +24,6 @@ const Item = ({item, categoryIndex, itemIndex, selected, deleteItem, editItem}) 
     }
 
     const onDeleteClick = e => {
-        console.log('Delete Button Clicked');
         deleteItem(categoryIndex, itemIndex);
     }
 

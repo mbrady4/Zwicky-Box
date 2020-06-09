@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+
 import Category from './Category';
-import { withRouter } from 'react-router-dom';
 import Shuffle from './Shuffle';
 import Reset from './Reset';
 import CurrentCombo from './CurrentCombo';
 import SavedCombos from './SaveCombos';
 
-import { updateItem, shuffleItems, resetItems, saveCombo, updatedSavedCombos } from '../../../actions/action';
+import { updateItem, shuffleItems, resetItems, saveCombo, updatedSavedCombos } from '../../actions/action';
+import { removeByKey } from '../../utils/helperFunctions';
 import './Table.scss';
 
 const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, hasShuffled, updateItem, shuffleItems, resetItems, saveCombo, updatedSavedCombos}) => {
-    // const [hasShuffled, setHasShuffled] = useState(false);
     const keys = Object.keys(table);
 
     const editItem = (categoryIndex, itemIndex, newValue) => {
@@ -22,7 +22,6 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, has
             [categoryIndex]:categoryToUpdate
         };
         updateItem(updatedTable);
-        console.log('edit item triggered!');
     }
 
     const addItem = (categoryIndex, newItem) => {
@@ -33,7 +32,6 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, has
             [categoryIndex]:categoryToUpdate
         }
         updateItem(updatedTable);
-        console.log('Add Item Triggered');
     }
 
     const deleteItem = (categoryIndex, itemIndex) => {
@@ -44,24 +42,11 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, has
             [categoryIndex]:categoryToUpdate
         }
         updateItem(updatedTable);
-        console.log('Delete Item Triggered');
-    }
-
-    // Helper function which rebuilds the object sans deleted category
-    const removeByKey = (myObj, deleteKey) => {
-        return Object.keys(myObj)
-          .filter(key => key !== deleteKey)
-          .reduce((result, current) => {
-            result[current] = myObj[current];
-            return result;
-        }, {});
     }
 
     const deleteCategory = (categoryIndex) => {
         const updatedTable = removeByKey(table, categoryIndex)
-        console.log(updatedTable);
         updateItem(updatedTable);
-        console.log('Delete Category Triggered');
     }
 
     const updateCategory = (categoryIndex, value) => {
@@ -72,12 +57,10 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, has
             [categoryIndex]:categoryToUpdate
         };
         updateItem(updatedTable);
-        console.log('update Category triggered!');
     }
 
     const addCategory = () => {
         const key = keys.length + 1;
-        console.log(key);
         const initialCat = {
             category: 'Category ' + key,
             items: ['Item 1', 'Item 2', 'Item 3'],
@@ -88,12 +71,9 @@ const Table = ({table, numPossibilities, exploredPossibilities, savedCombos, has
             [key]: initialCat
         }
         updateItem(updatedTable);
-        console.log('New Category Added');
     }
 
     const handleShuffle = () => {
-        console.log("Handle Shuffle Triggered");
-        // setHasShuffled(true);
         shuffleItems(table, exploredPossibilities);
     }
 

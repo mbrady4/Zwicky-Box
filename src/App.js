@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Switch, Route } from 'react-router-dom';
-import NavBar from './components/NavBar.js';
-import ZwickyTable from './components/zwickyTable/ZwickyTable';
+
+import NavBar from './components/NavBar/NavBar.js';
+import Table from './components/Table/Table';
 import Examples from './components/Examples/Examples';
 import HowToUse from './components/HowToUse/HowToUse';
 
@@ -20,7 +20,7 @@ function App() {
             <Examples />
           </Route>
           <Route exact path='/'>
-            <ZwickyTable />
+            <Table />
           </Route>
         </Switch>
     </div>
