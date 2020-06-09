@@ -5,24 +5,26 @@ import NavBar from './components/NavBar/NavBar.js';
 import Table from './components/Table/Table';
 import Examples from './components/Examples/Examples';
 import HowToUse from './components/HowToUse/HowToUse';
+import Footer from './components/Footer/Footer';
 
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-        <Switch>
-          <Route path='/howtouse'>
-            <HowToUse />
-          </Route>
-          <Route path='/examples'>
-            <Examples />
-          </Route>
-          <Route exact path='/'>
-            <Table />
-          </Route>
-        </Switch>
+      <NavBar/>
+      <Switch>
+        <Route path='/howtouse'>
+          <HowToUse/>
+        </Route>
+        <Route path='/examples'>
+          <Examples/>
+        </Route>
+        <Route exact path='/'>
+          <Table/>
+        </Route>
+      </Switch>
+      <Footer/>
     </div>
   );
 }
