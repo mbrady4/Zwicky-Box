@@ -1,51 +1,50 @@
 .category {
-    display:flex;
-    flex-direction: column;
-    margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
 
-    .category-title {
-        font-size: 2rem;
-        font-weight: 500;
-        padding-bottom: 1rem;
-        padding-left: 0.5rem;
-        margin-bottom: 0;
-        border-bottom: 2px #F0E1E1 solid;
-        width: 150px;
-        border-left: none;
-        border-right: none;
-        border-top: none;
+  .category-title {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+    border-bottom: 2px #f0e1e1 solid;
+    width: 150px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
 
-        &:focus {
-            outline: none;
-            border-bottom: 2px red solid;
-        }
+    &:focus {
+      outline: none;
+      border-bottom: 2px red solid;
     }
+  }
 
-    .trash {
-        font-size: 2rem;
-        color: #292828;
-        font-weight: 300;
-        padding-left: 0.5rem;
+  .trash {
+    font-size: 2rem;
+    color: #292828;
+    font-weight: 300;
+    padding-left: 0.5rem;
 
-        &:hover {
-            color: #5C5B5B;
-            cursor: pointer;
-        }
+    &:hover {
+      color: #5c5b5b;
+      cursor: pointer;
     }
+  }
 
-    .add-item {
-        border: none;
-        border-bottom: 1px #F0E1E1 solid;
-        font-size: 1.75rem;
-        padding: 1rem 0;
-        width: 150px;
-        font-weight: 300;
-        padding-left: 0.5rem;
+  .add-item {
+    border: none;
+    border-bottom: 1px #f0e1e1 solid;
+    font-size: 1.75rem;
+    padding: 1rem 0;
+    width: 150px;
+    font-weight: 300;
+    padding-left: 0.5rem;
 
-        &:focus {
-            outline: none;
-            border-bottom: 2px red solid;
-        }
+    &:focus {
+      outline: none;
+      border-bottom: 2px red solid;
     }
-
+  }
 }

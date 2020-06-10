@@ -1,10 +1,18 @@
-import React from 'react';
-import './Reset.scss';
+import React from "react";
+import "./Reset.scss";
+import PropTypes from "prop-types";
 
-const reset = ({ resetItems }) => {
-    return (
-        <button className='reset' onClick={ () => resetItems() }>Clear and reset</button>
-    )
-}
+// Renders a button which upon user click resets triggers an action which resets the app to initial state
+const Reset = ({ resetItems }) => {
+  return (
+    <button className="reset" onClick={() => resetItems()}>
+      Clear and reset
+    </button>
+  );
+};
 
-export default reset;
+Reset.propTypes = {
+  resetItems: PropTypes.object,
+};
+
+export default Reset;

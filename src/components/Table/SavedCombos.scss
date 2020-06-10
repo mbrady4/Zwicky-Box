@@ -1,55 +1,55 @@
 .saved-combos-table {
-    display:flex;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+
+  .saved-combo {
+    display: flex;
     flex-wrap: wrap;
-    background: #fff;
-    border-radius: 8px; 
-    padding: 1rem 2rem;
-    margin: 1rem 0;
 
-    .saved-combo {
-        display:flex;
-        flex-wrap: wrap;
+    div {
+      width: 150px;
+      padding: 0 1rem;
+      margin-top: 1rem;
+      padding-right: 1.75rem;
 
-        div {
-            width:150px;
-            padding: 0 1rem;
-            margin-top: 1rem;
-            padding-right:1.75rem;
-    
-            h3 {
-                font-size: 1.75rem;
-                font-weight: 300;
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-                border-bottom: 2px #F0E1E1 solid;
-                padding-left:0.5rem;
-            }
-    
-            h2 {
-                padding: 1rem 0;
-                font-size: 3rem;
-                font-weight: 500;
-                padding-left:0.5rem;
-            }
-        }
+      h3 {
+        font-size: 1.75rem;
+        font-weight: 300;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px #f0e1e1 solid;
+        padding-left: 0.5rem;
+      }
 
-        .delete-combo {
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: #292828;
-            background: none;
-            border: none;
-    
-            &:hover {
-                cursor:pointer;
-                background: #F0E1E1;
-                border-radius: 5px;
-                color: #5C5B5B;
-            }
-        
-            &:focus {
-                outline: none;
-            }
-        }
+      h2 {
+        padding: 1rem 0;
+        font-size: 3rem;
+        font-weight: 500;
+        padding-left: 0.5rem;
+      }
     }
+
+    .delete-combo {
+      font-size: 1.75rem;
+      font-weight: 500;
+      color: #292828;
+      background: none;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        background: #f0e1e1;
+        border-radius: 5px;
+        color: #5c5b5b;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }

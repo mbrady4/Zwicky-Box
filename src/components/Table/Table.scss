@@ -1,33 +1,32 @@
 .table {
-    display:flex;
-    flex-wrap: wrap;
-    background: #fff;
-    border-radius: 8px; 
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
 }
 
 .add-category {
-    font-size: 2rem;
-    font-weight: 300;
-    border: none;
-    background: none;
+  font-size: 2rem;
+  font-weight: 300;
+  border: none;
+  background: none;
 
-    &:hover {
-        cursor:pointer;
-        background: #F0E1E1;
-        border-radius: 5px;
-        color: #5C5B5B;
-    }
+  &:hover {
+    cursor: pointer;
+    background: #f0e1e1;
+    border-radius: 5px;
+    color: #5c5b5b;
+  }
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 h3 {
-    font-size: 2rem;
-    font-weight: 300;
-    padding: 2rem 1rem 0.5rem 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 2rem 1rem 0.5rem 1rem;
 }

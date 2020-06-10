@@ -1,19 +1,19 @@
 .reset {
-    font-size: 1.75rem;
-    font-weight: 300;
-    color: #292828;
-    background: none;
-    border: none;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #292828;
+  background: none;
+  border: none;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
 
-    &:hover {
-        color: #5C5B5B;
-        text-decoration: underline;
-        cursor: pointer;
-    }
+  &:hover {
+    color: #5c5b5b;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }

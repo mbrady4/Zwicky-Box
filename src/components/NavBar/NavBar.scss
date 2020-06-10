@@ -1,23 +1,23 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
-    h1 {
-        font-size: 4rem;
-    }
-    
-    a {
-        font-size: 2rem;
-        color: #292828;
-        text-decoration: none;
-        padding-left: 2rem;
+  h1 {
+    font-size: 4rem;
+  }
 
-        &:hover {
-            color: #5C5B5B;
-            text-decoration: underline;
-        }
+  a {
+    font-size: 2rem;
+    color: #292828;
+    text-decoration: none;
+    padding-left: 2rem;
+
+    &:hover {
+      color: #5c5b5b;
+      text-decoration: underline;
     }
+  }
 }
