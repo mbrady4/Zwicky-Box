@@ -21,7 +21,7 @@ const Shuffle = ({
 };
 
 Shuffle.propTypes = {
-  handleShuffle: PropTypes.object,
+  handleShuffle: PropTypes.func,
   exploredPossibilities: PropTypes.number,
   numPossibilities: PropTypes.number,
 };

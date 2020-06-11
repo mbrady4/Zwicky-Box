@@ -69,11 +69,11 @@ const Item = ({
 
 Item.propTypes = {
   item: PropTypes.string,
-  categoryIndex: PropTypes.number,
+  categoryIndex: PropTypes.string,
   itemIndex: PropTypes.number,
   selected: PropTypes.bool,
-  deleteItem: PropTypes.object,
-  editItem: PropTypes.object,
+  deleteItem: PropTypes.func,
+  editItem: PropTypes.func,
 };
 
 export default Item;

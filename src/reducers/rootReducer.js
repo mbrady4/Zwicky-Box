@@ -8,6 +8,7 @@ import {
   SET_LIVING_STATE,
 } from "../actions/action";
 import { initialState } from "../data/exampleData";
+import { v4 as uuidv4 } from "uuid";
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -28,7 +29,8 @@ export default (state = initialState, action) => {
 
     // add a new combo to the saved combos in the store
     case SAVE_COMBO:
-      const key = Object.keys(state.savedCombos).length;
+      // const key = Object.keys(state.savedCombos).length;
+      const key = uuidv4();
       return Object.assign({}, state, {
         savedCombos: {
           ...state.savedCombos,

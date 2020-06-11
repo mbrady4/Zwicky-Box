@@ -32,7 +32,7 @@ const SaveCombos = ({ savedCombos, deleteCombo }) => {
 
 SaveCombos.propTypes = {
   savedCombos: PropTypes.object,
-  deleteCombo: PropTypes.object,
+  deleteCombo: PropTypes.func,
 };
 
 export default SaveCombos;

@@ -12,7 +12,7 @@ const Reset = ({ resetItems }) => {
 };
 
 Reset.propTypes = {
-  resetItems: PropTypes.object,
+  resetItems: PropTypes.func,
 };
 
 export default Reset;
