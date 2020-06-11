@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 
 import "./Examples.scss";
 // Component that renders the example Zwicky boxes that users can get started with
-const Examples = (setMarketingExample, setLivingExample) => {
+const Examples = ({ setMarketingExample, setLivingExample }) => {
   // hard-coded data related to the example Zwicky boxes
   const examples = ["Marketing Strategies", "Places to live"];
   const images = ["marketingExample.png", "livingExample.png"];

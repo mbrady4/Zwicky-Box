@@ -16,7 +16,7 @@ import {
 } from "../../actions/action";
 import { removeByKey } from "../../utils/helperFunctions";
 import "./Table.scss";
- 
+
 // Connected to the store, passes state down to child components
 // Renders the Zwicky Box table (shuffle, current combos, saved combos, the table itself, and reset)
 const Table = ({
@@ -107,7 +107,6 @@ const Table = ({
   // delete a combination from the savedCombos object and triggers an action to update the store
   const deleteCombo = (id) => {
     const updatedCombos = removeByKey(savedCombos, id);
-    console.log("updated combos,", updatedCombos);
     const key = Object.keys(savedCombos).length;
     updatedSavedCombos(updatedCombos, key);
   };
