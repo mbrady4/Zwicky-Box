@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <p>
-        Made by <a href="https://mwbrady.com">Michael W. Brady</a>
+        Made by <a href="#">Michael W. Brady</a>
       </p>
     </div>
   );
